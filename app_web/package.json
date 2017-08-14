@@ -1,0 +1,22 @@
+{
+  "name": "app_web",
+  "version": "1.0.0",
+  "description": "https web",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "''"
+  },
+  "keywords": [
+    "https",
+    "nodejs"
+  ],
+  "author": "zh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}

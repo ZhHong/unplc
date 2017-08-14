@@ -1,0 +1,22 @@
+{
+  "name": "app_websocket",
+  "version": "1.0.0",
+  "description": "app websocket",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "''"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "zh",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.0.3"
+  }
+}
