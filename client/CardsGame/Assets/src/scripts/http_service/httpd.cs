@@ -21,7 +21,6 @@ namespace http_service.httpd
                 {
                     Debug.Log(www.downloadHandler.text);
                     JSONObject js = new JSONObject(www.downloadHandler.text);
-
                     Debug.Log("json file:" + js.GetField("errorcode") + "-----" + js.GetField("msg"));
                 }
             }

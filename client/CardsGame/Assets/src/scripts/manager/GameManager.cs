@@ -2,15 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+namespace namager
+{
+    public class GameManager {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        private static GameManager instance;
+        private GameManager() {
+        }
+
+        public static GameManager GetInstancse()
+        {
+            if(instance == null)
+            {
+                instance = new GameManager();
+            }
+            return instance;
+        }
+
+        /// <summary>
+        /// 设置大厅IP
+        /// </summary>
+        public void SetHallIp(JSONObject data)
+        {
+
+        }
+        /// <summary>
+        /// 设置版本信息
+        /// </summary>
+        /// <param name="data"></param>
+        public void SetVersionInfo(JSONObject data)
+        {
+
+        }
+
+
+    }
 }

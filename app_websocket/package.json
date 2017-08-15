@@ -17,6 +17,7 @@
   "author": "zh",
   "license": "ISC",
   "dependencies": {
+    "mongodb": "^2.2.31",
     "socket.io": "^2.0.3"
   }
 }
