@@ -45,12 +45,8 @@ public class NetWorkManager : MonoBehaviour
 
         socket.Connect();
 
-        socket.On("open", TestOpen);
-        socket.On("boop", TestBoop);
-        socket.On("error", TestError);
-        socket.On("close", TestClose);
-
-        StartCoroutine("BeepBoop");
+        socket.On("login_result", OnLoginResult);
+        socket.On("login_finished", OnLoginFinish);
     }
 
     //更新
@@ -59,55 +55,36 @@ public class NetWorkManager : MonoBehaviour
 
     }
 
-    private IEnumerator BeepBoop()
+    //HTTP请求回调
+
+    public void OnLoginAccountSuccess()
     {
-        // wait 1 seconds and continue
-        yield return new WaitForSeconds(1);
 
-        socket.Emit("beep");
-
-        // wait 3 seconds and continue
-        yield return new WaitForSeconds(3);
-
-        socket.Emit("beep");
-
-        // wait 2 seconds and continue
-        yield return new WaitForSeconds(2);
-
-        socket.Emit("beep");
-
-        // wait ONE FRAME and continue
-        yield return null;
-
-        socket.Emit("beep");
-        socket.Emit("beep");
     }
 
-    public void TestOpen(SocketIOEvent e)
-    {
-        Debug.Log("[SocketIO] Open received: " + e.name + " " + e.data);
+    public void OnLoginAccountFailded() {
+
     }
 
-    public void TestBoop(SocketIOEvent e)
+    public void OnLoginHallSuccess()
     {
-        Debug.Log("[SocketIO] Boop received: " + e.name + " " + e.data);
 
-        if (e.data == null) { return; }
-
-        Debug.Log(
-            "#####################################################" +
-            "THIS: " + e.data.GetField("this").str +
-            "#####################################################"
-        );
     }
 
-    public void TestError(SocketIOEvent e)
+    public void OnLoginHallFailed()
     {
-        Debug.Log("[SocketIO] Error received: " + e.name + " " + e.data);
+
     }
 
-    public void TestClose(SocketIOEvent e)
-    {
-        Debug.Log("[SocketIO] Close received: " + e.name + " " + e.data);
+    //socket 事件
+    public void OnLoginResult(SocketIOEvent e) {
+        Debug.Log("on " + e.name + "----->" + e.data);
     }
+
+    public void OnLoginFinish(SocketIOEvent e) {
+        Debug.Log("on " + e.name + "----->" + e.data);
+    }
+
+    
+
 }

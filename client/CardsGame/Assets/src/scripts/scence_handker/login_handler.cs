@@ -27,6 +27,20 @@ public class login_handler : MonoBehaviour {
     void OnLoginClick()
     {
         Debug.Log("login button click.");
-        SceneManager.LoadScene("hall",LoadSceneMode.Additive);
+       
+    }
+    /// <summary>
+    /// 登录成功回调
+    /// </summary>
+    void OnLoginSuccess() {
+        SceneManager.LoadScene("hall", LoadSceneMode.Additive);
+    }
+
+    /// <summary>
+    /// 登录失败回调
+    /// </summary>
+    void OnLoginFailed() {
+
     }
 }
+
