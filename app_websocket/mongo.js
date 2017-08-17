@@ -1,16 +1,4 @@
-var mongodb = require("mongodb");
+var mongo_client = require('mongodb').MongoClient
+var DB_CONN_STR = 'mongodb://localhost:27017/test'
 
-//server api :http://mongodb.github.io/node-mongodb-native/2.2/api/Server.html
-
-var host ="127.0.0.1";
-var port = 27017;
-var options ={
-    poolSize:5,
-}
-
-var mongo_server = new mongodb.Server(host,port,options);
-
-
-console.log(mongo_server)
-
-console.log(mongo_server.connections())
+mongo_client.connect(DB_CONN_STR,function(err,db){});
